@@ -27,8 +27,42 @@ void securitySystem();
 void analyzeHouseStatus();
 
 int main() {
-    
+    initializeSystem();
+    int choice;
 
+    while (1) {
+        displayMenu();
+        printf("Enter your choice : ");
+        scanf("%d",&choice);
+
+        switch (choice){
+            case 1:
+                controlLights();
+                break;
+
+            case 2:
+                readTemperature();
+                break;
+
+            case 3:
+                detectMotion();
+                break;
+            
+            case 4:
+                securitySystem();
+                break;
+
+            case 5:
+                analyzeHouseStatus();
+                break;
+
+            case 6:
+                print("Exiting...");
+                return 0;
+            default:
+                print ("Invalid choice");
+        }
+    }
     return 0;
 }
 
